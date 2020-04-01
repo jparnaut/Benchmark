@@ -5,7 +5,7 @@ steps:
   - name: Static Analysis
     image: maven
     commands:
-    - mvn -Dmaven.repo.local=.m2 --batch-mode --settings pom.xml clean verify sonar:sonar -Dsonar.projectVersion=${DRONE_COMMIT_SHA} -Dsonar.projectKey=${DRONE_REPO_NAME} -Dsonar.projectName=${DRONE_REPO_NAME} -Dsonar.sources=. -Dsonar.scm.disabled=true -Dsonar.host.url=http://35.188.205.135:9000 -Dsonar.login=admin -Dsonar.password=^2!%\'GmN$\(_pd#?z8z.7\"\&!_=#%@
+    - mvn -e -Dmaven.repo.local=.m2 --batch-mode --settings pom.xml clean verify sonar:sonar -Dsonar.projectVersion=${DRONE_COMMIT_SHA} -Dsonar.projectKey=${DRONE_REPO_NAME} -Dsonar.projectName=${DRONE_REPO_NAME} -Dsonar.sources=. -Dsonar.scm.disabled=true -Dsonar.host.url=http://35.188.205.135:9000 -Dsonar.login=admin -Dsonar.password=^2!%\'GmN$\(_pd#?z8z.7\"\&!_=#%@
     environment:
       MAVEN_OPTS: -Xms512m -Xmx3g
 
